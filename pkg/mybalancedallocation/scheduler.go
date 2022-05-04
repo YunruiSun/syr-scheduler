@@ -10,7 +10,6 @@ import (
 
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/types"
 	"k8s.io/klog"
 	"k8s.io/kubernetes/pkg/scheduler/framework"
 	ctrl "sigs.k8s.io/controller-runtime"
@@ -71,17 +70,12 @@ func New(_ runtime.Object, h framework.Handle) (framework.Plugin, error) {
 			cache:  scvCache,
 		}, nil
 	} else {
-		return nil, errors.New("Cache Not Sync! ")
+		return nil, errors.New("cache Not Sync! 1")
 	}
 }
 
 func (m *MyBalancedAllocation) Score(ctx context.Context, state *framework.CycleState, p *v1.Pod, nodeName string) (int64, *framework.Status) {
-	// Get Node Info
-	nodeInfo, err := m.handle.SnapshotSharedLister().NodeInfos().Get(nodeName)
-	if err != nil {
-		return 0, framework.NewStatus(framework.Error, fmt.Sprintf("getting node %q from Snapshot: %v", nodeName, err))
-	}
-
+	// Get Node info from prometheus
 	node_cpu_frac, err := m.getNodeCpuFraction(nodeName)
 	if err != nil {
 		klog.Errorf("CalculateScore Error: %v", err)
