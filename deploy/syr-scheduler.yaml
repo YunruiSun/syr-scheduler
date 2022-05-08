@@ -50,11 +50,11 @@ spec:
       volumes:
         - name: scheduler-config
           configMap:
-            name: scheduler-config2
+            name: scheduler-config
       containers:
         - name: syr-scheduler
-          image: github.com/YunruiSun/syr-scheduler:1.0
-          imagePullPolicy: Always
+          image: github.com/yunruisun/syr-scheduler:1.0
+          imagePullPolicy: Never
           args:
             - syr-scheduler
             - --config=/scheduler/scheduler-config.yaml

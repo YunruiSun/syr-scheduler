@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/YunruiSun/syr-scheduler/pkg/register"
 	"k8s.io/component-base/logs"
 	"math/rand"
 	"os"
+	"syr-scheduler-test-2/pkg/register"
 	"time"
 )
 

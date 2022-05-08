@@ -2,6 +2,6 @@ FROM debian:stretch-slim
 
 WORKDIR /
 
-COPY bin/yoda-scheduler /usr/local/bin
+COPY bin/syr-scheduler /usr/local/bin
 
 CMD ["syr-scheduler"]

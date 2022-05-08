@@ -1,9 +1,9 @@
 package register
 
 import (
-	"github.com/YunruiSun/syr-scheduler/pkg/mybalancedallocation"
 	"github.com/spf13/cobra"
 	"k8s.io/kubernetes/cmd/kube-scheduler/app"
+	"syr-scheduler-test-2/pkg/mybalancedallocation"
 )
 
 func Register() *cobra.Command {

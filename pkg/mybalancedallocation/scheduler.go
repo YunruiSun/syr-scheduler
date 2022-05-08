@@ -15,7 +15,7 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/cache"
 
-	"github.com/YunruiSun/syr-scheduler/pkg/mybalancedallocation/filter"
+	"syr-scheduler-test-2/pkg/mybalancedallocation/filter"
 )
 
 const (
